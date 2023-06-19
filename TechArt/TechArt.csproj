@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <Authors>Ibrahim Ajumoko</Authors>
+    <Description>A .NETCORE package for improving app performance and customization of data response.</Description>
+    <PackageTags>pagination;age;reference;referencenumber;slug;yes;no;false;true;</PackageTags>
+    <Title>TechArt</Title>
+  </PropertyGroup>
+
+</Project>
