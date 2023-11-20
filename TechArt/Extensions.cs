@@ -204,5 +204,10 @@ namespace TechArt
         {
             return records.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
         }
+
+        public static bool IsNull<T>(this T value) where T : class
+        {
+            return value == null;
+        }
     }
 }
