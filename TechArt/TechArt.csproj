@@ -1,13 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <Authors>Ibrahim Ajumoko</Authors>
     <Description>A .NETCORE package for improving app performance and customization of data response.</Description>
     <PackageTags>pagination;age;reference;referencenumber;slug;yes;no;false;true;</PackageTags>
     <Title>TechArt</Title>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <FileVersion>1.0.1</FileVersion>
+    <Product>$(AssemblyName).$(FileVersion)</Product>
+    <Version>1.0.1</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCoreHero.Results" Version="1.1.1" />
+    <PackageReference Include="AspNetCoreHero.ThrowR" Version="1.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
+  </ItemGroup>
 
 </Project>

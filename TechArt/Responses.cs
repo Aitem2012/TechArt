@@ -14,15 +14,29 @@ public class BaseResponse<T>
 {
     public string Message { get; set; }
     public T Data { get; set; }
-    public bool Status { get; set; }
+    public bool IsSuccessful { get; set; }
 
-    public BaseResponse<T> CreateResponse(string message, bool status, T data)
+    public BaseResponse<T> CreateResponse(string message, bool isSuccessful, T data)
     {
         return new BaseResponse<T>
         {
             Message = message,
-            Status = status,
+            IsSuccessful = isSuccessful,
             Data = data
         };
+    }
+}
+
+public static class QueryableExtensions
+{
+    public static async Task<PaginatedResult<T>> ToPaginatedListAsync<T>(this IQueryable<T> source, int pageNumber, int pageSize) where T : class
+    {
+        Throw.Exception.IfNull(source, nameof(source));
+        pageNumber = pageNumber == 0 ? 1 : pageNumber;
+        pageSize = pageSize == 0 ? 10 : pageSize;
+        long count = await source.LongCountAsync();
+        pageNumber = pageNumber <= 0 ? 1 : pageNumber;
+        List<T> items = await source.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
+        return PaginatedResult<T>.Success(items, count, pageNumber, pageSize);
     }
 }
