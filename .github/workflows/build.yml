@@ -30,4 +30,4 @@ jobs:
         # You may pin to the exact commit or the version.
       uses: JetBrains/ReSharper-InspectCode@v0.3
       with:
-          solution: ./TechArt.sln
+          solution: TechArt.sln
