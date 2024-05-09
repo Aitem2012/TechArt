@@ -56,8 +56,8 @@ namespace TechArt.Tests
         {
             var sut = new DateTime(1993, 11, 30);
 
-            Assert.Equal(29, sut.ToAge());
-            Assert.NotEqual(30, sut.ToAge());
+            Assert.NotEqual(29, sut.ToAge());
+            Assert.Equal(30, sut.ToAge());
         }
     }
 }
