@@ -1,9 +1,4 @@
-﻿using System.ComponentModel;
-using System.Reflection;
-using System.Security.Claims;
-using System.Security.Principal;
-
-namespace TechArt
+﻿namespace TechArt
 {
     public static class Extensions
     {
@@ -205,9 +200,22 @@ namespace TechArt
             return records.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
         }
 
+        /// <summary>
+        /// check if a class is null
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static bool IsNull<T>(this T value) where T : class
         {
             return value == null;
         }
+
+        /// <summary>
+        /// Check if a string is empty
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static bool IsEmpty(this string str) => string.IsNullOrEmpty(str) || string.IsNullOrWhiteSpace(str);
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace TechArt.Tests
+﻿namespace TechArt.Tests
 {
     public enum Enums
     {
